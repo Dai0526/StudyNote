@@ -25,14 +25,6 @@ We need to deal with read/write large amount of data in parallel from/to disk/pa
 	|Structure    | Schema-on-write   | Schema-on-read|
 	|Integrity    | High              | Low           |
 	|Scaling      | Nonlinear         | Linear        |
-	
-	<table class="table table-bordered table-striped table-condensed">
-	  <tr>
-	    <td><td/>
-<td><td/>
-<td><td/>
-<td><td/>
-   	  </tr>
 
 
 	2. Data set operator structure- in hadoop data, data loading phase is just a file copy (ignore schema).
