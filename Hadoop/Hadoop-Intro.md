@@ -28,7 +28,8 @@ We need to deal with read/write large amount of data in parallel from/to disk/pa
 
 
 	2. Data set operator structure- in hadoop data, data loading phase is just a file copy (ignore schema).
-	Hadoop works well on unstructured or semi-structured data because it is designed to interpret the data at processing time. This provides flexibility and avoids the costly data loading phase of an RDMBS.
+	Hadoop works well on unstructured or semi-structured data because it is designed to interpret the data at processing time.  
+      This provides flexibility and avoids the costly data loading phase of an RDMBS.
 	
 	3. Relational data is normalized(retain integrity and remove redundancy).
 	   Hadoop scales linearly with the size of the data. 
