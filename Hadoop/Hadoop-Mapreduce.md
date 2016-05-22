@@ -2,7 +2,15 @@
 	MapReduce works by breaking the processing into two phases:
 			*. map
 			*. Reduce  
-	Each phase has key-value pairs as input and output.
+	Each phase has key-value pairs as input and output.  
+
+##  How?  
+	All discussion is about when and where to do map and reduce.
+		can use combine function to combine the output for each cluster, then reduce
+		See the code for MaxTemperature  <job.setCombinerClass(MaxtemperatureReducer.class);>  
+		Function with this property are called _commutative_ and _associative_
+
+		The mapreduce can also be achieved with ruby and Python. (will do later)
 
 
 ## How to Run and compile files
