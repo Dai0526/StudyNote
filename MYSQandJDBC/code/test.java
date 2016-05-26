@@ -4,7 +4,7 @@ public class test
 {
 	//jdbc driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost/test";
+	static final String DB_URL = "jdbc:mysql://localhost/dota2pro";
 
 	static final String USER="beginner";
 	static final String PASS="fth19930526";
@@ -26,10 +26,13 @@ public class test
 			System.out.println("Createing statement");
 			stmt=conn.createStatement();
 			String sql;
-			sql="SELECT pid, first, last, age FROM Employees;";
-			ResultSet rs=stmt.executeQuery(sql);
+			//sql="SELECT pid, first, last, age FROM Employees;";
+			//sql="SELECT p.lname, p.fname, p.IGN, p.position FROM player p,enroll e WHERE e.tid=1 AND e.pid=p.pid";
+			ResultSet rs=stmt.executeQuery("SELECT p.lname, p.fname, p.IGN, p.position FROM player p,enroll e WHERE e.tid=1 AND e.pid=p.pid");
 
+			System.out.println("Players from oLd Chicken: ");
 			while(rs.next()){
+				/*
 				int pid=rs.getInt("pid");
 				int age=rs.getInt("age");
 				String first = rs.getString("first");
@@ -40,7 +43,18 @@ public class test
 				System.out.println("AGE: "+age);
 				System.out.println("First: "+first);
 				System.out.println("LAST: "+last);
+				*/
 
+				int position=rs.getInt("position");
+				String first = rs.getString("fname");
+				String last = rs.getString("lname");
+				String ign = rs.getString("IGN");
+
+				//display values
+				System.out.println("IGN: "+ign);
+				System.out.println("Name: "+first+" "+last);
+
+				System.out.println("Position: "+position);
 			}//while
 			rs.close();
 			stmt.close();
